@@ -48,3 +48,43 @@ function funcConditionRange() {
     inputTextElement.value = rangeElement.value
     divValueElement.style.width = rangeElement.value + 'px'
 }
+
+// Border Radius Change
+funcBorderRadiusChange()
+function funcBorderRadiusChange ()
+{
+    let rtlElement = document.getElementById("rtl")
+    let ttlElement = document.getElementById("ttl")
+    let rtrElement = document.getElementById("rtr")
+    let ttrElement = document.getElementById("ttr")
+    let rblElement = document.getElementById("rbl")
+    let tblElement = document.getElementById("tbl")
+    let rbrElement = document.getElementById("rbr")
+    let tbrElement = document.getElementById("tbr")
+
+    let divBorderRadiusElement = document.getElementById("divWrapper")
+
+    rtlElement.addEventListener('input', ()=>{
+        ttlElement.value = rtlElement.value
+        funcChangeRadius()
+    })
+    divBorderRadiusElement.style.borderRadius = rtlElement.value + "px "
+   
+    rtrElement.addEventListener('input', ()=>{
+        ttrElement.value = rtrElement.value
+        funcChangeRadius()
+    })
+    rblElement.addEventListener('input', ()=>{
+        tblElement.value = rblElement.value
+        funcChangeRadius()
+    })
+    rbrElement.addEventListener('input', ()=>{
+        tbrElement.value = rbrElement.value
+        funcChangeRadius()
+    })
+   
+    function funcChangeRadius() {
+    divBorderRadiusElement.style.borderRadius = rtlElement.value + "px " +
+    rtrElement.value + "px " + rblElement.value + "px " + rbrElement.value + "px "
+    }
+}
