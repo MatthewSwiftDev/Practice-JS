@@ -27,3 +27,20 @@
     position: absolute;
     top: 10%;
 } 
+
+/* #4 */
+.menu-item {
+    border: 2px solid slateblue;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.submenu {
+    height: 40px;
+    width: 120px;
+    background: wheat;
+    position: absolute;
+    cursor: pointer;
+    display: none;
+}

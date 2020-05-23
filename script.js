@@ -49,7 +49,7 @@ function funcConditionRange() {
     divValueElement.style.width = rangeElement.value + 'px'
 }
 
-// Border Radius Change
+// 3. Border Radius Change 
 funcBorderRadiusChange()
 function funcBorderRadiusChange ()
 {
@@ -86,5 +86,34 @@ function funcBorderRadiusChange ()
     function funcChangeRadius() {
     divBorderRadiusElement.style.borderRadius = rtlElement.value + "px " +
     rtrElement.value + "px " + rblElement.value + "px " + rbrElement.value + "px "
+    }
+}
+
+// 4. Выпадающее меню
+
+// Работаем в области nav
+let navElement = document.getElementById('nav')
+
+navElement.onmouseover = function(event) {
+    let targ = event.target
+    
+    if(targ.className == "menu-item") {
+        let subMenuElement = targ.getElementsByClassName('submenu')
+        closeSubMenu()
+        subMenuElement[0].style.display="block"
+    }
+}
+
+// Если покидаем облать nav, все подменю пропадают
+document.onmouseover = function(event) {
+    if(event.target.className != "menu-item" && event.target.className != "submenu") {
+        closeSubMenu()
+    }
+}
+
+function closeSubMenu() {
+    let subMenuElement = document.getElementsByClassName('submenu')
+    for(let i = 0;i<subMenuElement.length;i++) {
+        subMenuElement[i].style.display='none'
     }
 }
