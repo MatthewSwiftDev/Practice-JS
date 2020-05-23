@@ -117,3 +117,38 @@ function closeSubMenu() {
         subMenuElement[i].style.display='none'
     }
 }
+
+// 5. Вкладки на стрнице
+
+// Изначально отборажается первая вкладка
+let tabElements = document.getElementsByClassName('tab')
+let tabContentElements = document.getElementsByClassName('tabContent')
+
+window.onload = function() {
+    for(let i = 1; i< tabContentElements.length;i++) {
+        tabContentElements[i].classList.add('hide')
+    }
+}
+
+let tabsElement = document.getElementById('tabs')
+
+tabsElement.addEventListener('click', (event)=>{
+    let targ = event.target
+    let indexContentElement
+
+    if(targ.className == "tab") {
+        // Определяем какой индекс у элмента
+        for(let i = 0; i< tabElements.length;i++) {
+            tabContentElements[i].classList.add('hide')
+            tabContentElements[i].classList.remove('show')
+            tabElements[i].classList.remove('whiteborder')
+            if(targ == tabElements[i]) {
+                indexContentElement = i
+                console.log(indexContentElement)
+                console.log(indexContentElement)
+                tabContentElements[indexContentElement].classList.add('show')
+                tabElements[indexContentElement].classList.add('whiteborder')
+            }       
+        } 
+    }
+})

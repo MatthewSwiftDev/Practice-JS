@@ -44,3 +44,44 @@
     cursor: pointer;
     display: none;
 }
+
+/* #5 */
+#tabs {
+    padding: 15px;
+    margin: 20px;
+    border: 3px dashed limegreen;
+    border-radius: 20px;
+}
+
+#tabs .tab {
+    padding: 5px;
+    margin: 0 10px;
+    display: inline-block;
+    border: 2.5px solid slateblue;
+    border-radius: 1ch;
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+}
+  
+#tabs .whiteborder {
+    border: 2.5px solid slateblue;
+    border-radius: 1ch;
+    position: relative;
+}
+
+#tabs .tabContent {
+    margin: 10px;
+    padding: 5px;
+    border: 2.5px solid slateblue;
+    border-radius: 1ch;
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
