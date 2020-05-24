@@ -91,64 +91,89 @@ function funcBorderRadiusChange ()
 
 // 4. Выпадающее меню
 
-// Работаем в области nav
-let navElement = document.getElementById('nav')
-
-navElement.onmouseover = function(event) {
-    let targ = event.target
+funcNav()
+function funcNav() {
+    let navElement = document.getElementById('nav')
     
-    if(targ.className == "menu-item") {
-        let subMenuElement = targ.getElementsByClassName('submenu')
-        closeSubMenu()
-        subMenuElement[0].style.display="block"
+    // Работаем в области nav
+    navElement.onmouseover = function(event) {
+        let targ = event.target
+        
+        if(targ.className == "menu-item") {
+            let subMenuElement = targ.getElementsByClassName('submenu')
+            closeSubMenu()
+            subMenuElement[0].style.display="block"
+        }
     }
-}
 
-// Если покидаем облать nav, все подменю пропадают
-document.onmouseover = function(event) {
-    if(event.target.className != "menu-item" && event.target.className != "submenu") {
-        closeSubMenu()
+    // Если покидаем облать nav, все подменю пропадают
+    document.onmouseover = function(event) {
+        if(event.target.className != "menu-item" && event.target.className != "submenu") {
+            closeSubMenu()
+        }
     }
-}
 
-function closeSubMenu() {
-    let subMenuElement = document.getElementsByClassName('submenu')
-    for(let i = 0;i<subMenuElement.length;i++) {
-        subMenuElement[i].style.display='none'
+    function closeSubMenu() {
+        let subMenuElement = document.getElementsByClassName('submenu')
+        for(let i = 0;i<subMenuElement.length;i++) {
+            subMenuElement[i].style.display='none'
+        }
     }
 }
 
 // 5. Вкладки на стрнице
+funcTabs()
+function funcTabs() {
+    let tabElements = document.getElementsByClassName('tab')
+    let tabContentElements = document.getElementsByClassName('tabContent')
 
-// Изначально отборажается первая вкладка
-let tabElements = document.getElementsByClassName('tab')
-let tabContentElements = document.getElementsByClassName('tabContent')
-
-window.onload = function() {
-    for(let i = 1; i< tabContentElements.length;i++) {
-        tabContentElements[i].classList.add('hide')
+    // После загрузки страницы отборажается первая вкладка
+    window.onload = function() {
+        for(let i = 1; i< tabContentElements.length;i++) {
+            tabContentElements[i].classList.add('hide')
+        }
     }
+
+    let tabsElement = document.getElementById('tabs')
+
+    tabsElement.addEventListener('click', (event)=>{
+        let targ = event.target
+        let indexContentElement
+
+        if(targ.className == "tab") {
+            // Определяем какой индекс у элмента
+            for(let i = 0; i< tabElements.length;i++) {
+                tabContentElements[i].classList.add('hide')
+                tabContentElements[i].classList.remove('show')
+                tabElements[i].classList.remove('whiteborder')
+                if(targ == tabElements[i]) {
+                    indexContentElement = i                
+                    tabContentElements[indexContentElement].classList.add('show')
+                    tabElements[indexContentElement].classList.add('whiteborder')
+                }       
+            } 
+        }
+    })
 }
 
-let tabsElement = document.getElementById('tabs')
+// 6. Модальное окно
+funcModalWindow()
+function funcModalWindow() {
+    let modalElement = document.getElementById('myModal')
+    let btnElement = document.getElementById('myBtn')
+    let spanCloseElement = document.getElementsByClassName('close')[0];
 
-tabsElement.addEventListener('click', (event)=>{
-    let targ = event.target
-    let indexContentElement
+    btnElement.addEventListener('click', ()=>{
+        modalElement.style.display = "block"
+    })
 
-    if(targ.className == "tab") {
-        // Определяем какой индекс у элмента
-        for(let i = 0; i< tabElements.length;i++) {
-            tabContentElements[i].classList.add('hide')
-            tabContentElements[i].classList.remove('show')
-            tabElements[i].classList.remove('whiteborder')
-            if(targ == tabElements[i]) {
-                indexContentElement = i
-                console.log(indexContentElement)
-                console.log(indexContentElement)
-                tabContentElements[indexContentElement].classList.add('show')
-                tabElements[indexContentElement].classList.add('whiteborder')
-            }       
-        } 
-    }
-})
+    spanCloseElement.addEventListener('click', ()=>{
+        modalElement.style.display = "none"
+    })
+
+    // window.addEventListener('click', (event)=>{
+    //     if(event.target == modalElement) {
+    //         modalElement.style.display = "none"      
+    //     }
+    // })
+}
