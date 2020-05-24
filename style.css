@@ -118,3 +118,24 @@
     border: 2.5px solid slateblue;
     border-radius: 1ch;
 }
+
+/* #7 */
+#buttonGoMove {
+    margin: 15px;
+    display: block; 
+}
+
+#areaAnimation {
+    margin: 15px;
+    width: 350px;
+    height: 350px;
+    background-color: rgb(32, 136, 255);
+    position: relative;
+}
+
+#objectAnimation {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(72, 255, 0);
+}

@@ -177,3 +177,28 @@ function funcModalWindow() {
     //     }
     // })
 }
+
+// 7. Анмация
+funcAnimation()
+
+function funcAnimation() {
+    let buttonAnimationElement = document.getElementById('buttonGoMove')
+    let divAnimationElement = document.getElementById('objectAnimation')
+    
+    let pos = 0;
+    
+    buttonAnimationElement.addEventListener('click', ()=>{
+        let intervalElement = setInterval(funcIntervalAnimation, 1)
+
+        function funcIntervalAnimation () {
+            if(pos <= 320) {
+                divAnimationElement.style.top = pos+"px"
+                divAnimationElement.style.left = pos+"px"
+                pos++
+            }
+            else {
+                clearInterval(intervalElement)
+            }
+        }
+    })
+}
