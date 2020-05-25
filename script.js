@@ -178,7 +178,7 @@ function funcModalWindow() {
     // })
 }
 
-// 7. Анмация
+// 7. Анимация
 funcAnimation()
 
 function funcAnimation() {
@@ -201,4 +201,44 @@ function funcAnimation() {
             }
         }
     })
+}
+
+// 7. Слайдер
+funcSlider()
+
+function funcSlider() {
+    let imageElements = document.querySelectorAll(".sliderContent img")
+    let numCurrentImage = 0
+
+    let btnNextElement = document.getElementById('bntNext')
+    let btnBackElement = document.getElementById('btnBack')
+
+    btnNextElement.addEventListener('click', ()=>{
+        numCurrentImage++
+        for(let i = 0; i< imageElements.length;i++) {
+            imageElements[i].classList.add('imageNone')
+        }
+
+        funcAbsAndRemove()
+    })
+
+    btnBackElement.addEventListener('click', ()=>{
+        numCurrentImage--
+        
+        for(let i = 0; i< imageElements.length;i++) {
+            imageElements[i].classList.add('imageNone')
+        }
+        console.log(numCurrentImage % 3)
+
+        funcAbsAndRemove()
+    })
+
+    function funcAbsAndRemove () {
+        let tempCurrent = numCurrentImage
+        if(numCurrentImage < 0) {
+            tempCurrent = -numCurrentImage
+        }
+        imageElements[tempCurrent % 3].classList.remove('imageNone')
+    }
+
 }

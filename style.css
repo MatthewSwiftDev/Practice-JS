@@ -47,6 +47,8 @@
 
 /* #5 */
 #tabs {
+    max-width: 500px;
+    min-width: 300px;
     padding: 15px;
     margin: 20px;
     border: 3px dashed limegreen;
@@ -138,4 +140,46 @@
     width: 30px;
     height: 30px;
     background-color: rgb(72, 255, 0);
+}
+
+/* #8 */
+
+.sliderWrap {
+    border: 3px solid dodgerblue;
+    border-radius: 5px;
+    width: 550px;
+    height: 820px;
+    margin: 50px auto;
+    position: relative;
+    background-color: lavender;
+}
+
+.sliderContent {
+    width: 500px;
+    height: 700px;
+    margin: 25px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.sliderContent img {
+    width: 500px;
+    height: 750px;
+    position: absolute;
+    border: 2.5px outset burlywood ;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.imageNone {
+    display: none;
+}
+
+.btnNextImage {
+    position: relative;
+}
+
+.switchImage {
+    width: 125px;
+    margin: 0 auto;
 }
