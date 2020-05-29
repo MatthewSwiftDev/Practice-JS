@@ -234,24 +234,27 @@ margin: 15px auto;
     right: 0;
 }
 
-.prevSlide .prevSlideButton, .nextSlideButton {
-    /* display: block; */
+.prevSlide .prevSlideButton, .nextSlide .nextSlideButton{
     color: ghostwhite;
-    width: 50px;
     font-size: 30px;
     margin: auto 0;
-    
+    opacity: .8;
+}
+.prevSlide .prevSlideButton:hover, .nextSlide .nextSlideButton:hover {
+    opacity: 0.2;
 }
 
 .containerDot {
-    text-align: center;
-    margin: 0px auto;
+    position: absolute;
     font-size: 30px;
-
+    bottom: 5%;
+    left: 45%;
+    width: 100px;
+    text-align: center;
+    margin: 10px auto;
 }
 
 .dot {
-    cursor: pointer;
     height: 15px;
     width: 15px;
     margin: 0 2px;
@@ -260,6 +263,7 @@ margin: 15px auto;
     background-color: gray;
 }
 
-span:hover {
+.dotCurrent {
     background-color: black;
 }
+

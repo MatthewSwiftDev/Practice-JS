@@ -242,3 +242,47 @@ function funcSlider() {
     }
 
 }
+
+// 7.1. Слайдер V.2.0
+
+funcSliderSecond ()
+
+function funcSliderSecond () {
+    
+    let mySlidesElements = document.querySelectorAll(".slideshow-container .mySlides")
+    let prevSlideElement = document.getElementsByClassName("prevSlide")[0]
+    let nextSlideElement = document.getElementsByClassName("nextSlide")[0]
+    let dotElements = document.getElementsByClassName("dot")
+    let currentSlide = 0
+
+    funcSlideShow()
+
+    // Скрывает все изображения, кроме выбранного
+    function funcSlideShow () {
+        for(let i = 0; i< mySlidesElements.length; i++) {
+            mySlidesElements[i].classList.add("imageNone")
+            dotElements[i].classList.remove("dotCurrent")
+        }
+        mySlidesElements[currentSlide].classList.remove("imageNone")
+        mySlidesElements[currentSlide].style.transition="ease"
+        dotElements[currentSlide].classList.add("dotCurrent")
+    }
+
+    prevSlideElement.addEventListener('click', ()=>{
+        currentSlide--
+        if(currentSlide<0) {
+            currentSlide = 2
+        }
+        funcSlideShow()
+    })
+
+    nextSlideElement.addEventListener('click', ()=>{
+        currentSlide++
+        if(currentSlide>2) {
+            currentSlide = 0
+        }
+
+        funcSlideShow()
+    })
+
+}
