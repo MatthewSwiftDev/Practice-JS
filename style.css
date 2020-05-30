@@ -267,3 +267,52 @@ margin: 15px auto;
     background-color: black;
 }
 
+
+/* #9 */
+.filtration-container {
+position: relative;
+min-width: 250px;
+max-width: 700px;
+margin: 0 auto;
+padding: 15px;
+}
+
+.Title-list {
+    font-size: 40px;
+}
+
+#inputName {
+    width: 100%;
+    font-size: 30px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+#filtrationUl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#filtrationUl li a {
+    border: 1px solid rgb(163, 160, 196);
+    margin-top: -1px;
+    display: block;
+    background-color: ghostwhite;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    padding: 5px;
+}
+
+
+#filtrationUl li a.header {
+    width: 100%;
+    padding: 0 10px;
+    background-color: gainsboro;
+}
+
+#filtrationUl li a:hover {
+    background-color: rgb(201, 199, 199);
+}

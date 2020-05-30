@@ -203,7 +203,7 @@ function funcAnimation() {
     })
 }
 
-// 7. Слайдер
+// 8. Слайдер
 funcSlider()
 
 function funcSlider() {
@@ -243,7 +243,7 @@ function funcSlider() {
 
 }
 
-// 7.1. Слайдер V.2.0
+// 8.1. Слайдер V.2.0
 
 funcSliderSecond ()
 
@@ -283,6 +283,34 @@ function funcSliderSecond () {
         }
 
         funcSlideShow()
+    })
+
+}
+
+// 9. Фильтрация
+
+funcFiltration()
+
+function funcFiltration() {
+
+    let input = document.getElementById("inputName")  
+    let ul = document.getElementById("filtrationUl")
+    let li = document.getElementsByTagName("li")
+   
+    input.addEventListener("keyup", () => {
+        let filter = input.value.toUpperCase()
+
+        for(let i = 0;i<li.length;i++) {
+            let a = li[i].getElementsByTagName("a")[0]
+            
+            if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = ""          
+            }
+            else {
+                li[i].style.display = "none"
+                console.log("fired")
+            }
+        }
     })
 
 }
