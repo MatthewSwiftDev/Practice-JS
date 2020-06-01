@@ -341,3 +341,20 @@ function funcCalculator() {
     })
 
 }
+
+// 11. Google maps API
+
+let pos = {lat: -34.397, lng: 150.644}
+
+function initMap() {
+    let map = new google.maps.Map(document.getElementById("map"), {
+    center: pos,
+    zoom: 15
+    });
+
+let marker = new google.maps.marker({
+    map: map,
+    position: pos,
+    title: "Городская среда"
+})
+}

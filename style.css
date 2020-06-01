@@ -331,3 +331,11 @@ padding: 15px;
 .calculator-container button {
     padding: 0 10px;
 }
+
+/* #11 */
+
+#map {
+    width: 1000px;
+    height: 600px;
+    margin: 15px auto;
+}
