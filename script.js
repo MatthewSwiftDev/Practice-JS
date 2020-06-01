@@ -303,7 +303,7 @@ function funcFiltration() {
         for(let i = 0;i<li.length;i++) {
             let a = li[i].getElementsByTagName("a")[0]
             
-            if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            if(a.innerText.toUpperCase().indexOf(filter) > -1) {
                 li[i].style.display = ""          
             }
             else {
@@ -311,6 +311,33 @@ function funcFiltration() {
                 console.log("fired")
             }
         }
+    })
+}
+
+// 10. Калькулятор
+
+funcCalculator()
+
+function funcCalculator() {
+    let buttonPlusElement = document.getElementById("buttonPlus")
+    let buttonMinusElement = document.getElementById("buttonMinus")
+    let buttonMultiplicationElement = document.getElementById("buttonMultiplication")
+
+    let outAnswerElement = document.getElementById("outAnswer")
+
+    buttonPlusElement.addEventListener('click', ()=>{
+        outAnswerElement.innerText = parseInt(document.getElementById("n1").value)
+         + parseInt(document.getElementById("n2").value)
+    })
+
+    buttonMinusElement.addEventListener('click', ()=>{
+        outAnswerElement.innerText = parseInt(document.getElementById("n1").value)
+        - parseInt(document.getElementById("n2").value)
+    })
+
+    buttonMultiplicationElement.addEventListener('click', ()=>{
+        outAnswerElement.innerText = parseInt(document.getElementById("n1").value)
+        * parseInt(document.getElementById("n2").value)
     })
 
 }
