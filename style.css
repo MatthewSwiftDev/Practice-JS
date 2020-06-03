@@ -339,3 +339,65 @@ padding: 15px;
     height: 600px;
     margin: 15px auto;
 }
+
+/* #12 */
+
+.modal {
+    display: none;
+    position: fixed;
+    background-color: black;
+    opacity: .9;
+}
+
+#modalImage {
+    width: 800px;
+    height: 80%;
+    margin: 25px; 
+    border: 5px double rgb(45, 172, 108);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#modalImage:hover {
+    opacity: .7;
+}
+
+#modalImageFull {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 15px;
+    top: 40%;
+}
+
+#caption {
+    position: relative;
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: blanchedalmond;
+    font-size: 25px;
+    height: 150px;
+}
+
+.closeModalWindow {
+    top: 15px;
+    right: 15px;
+    position: absolute;
+    color: blanchedalmond;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 100%;
+    transition: .3s;
+}
+
+.closeModalWindow:hover {
+    cursor: pointer;
+    color: cornsilk;
+}

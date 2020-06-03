@@ -344,17 +344,37 @@ function funcCalculator() {
 
 // 11. Google maps API
 
-let pos = {lat: -34.397, lng: 150.644}
+// let pos = {lat: -34.397, lng: 150.644}
 
-function initMap() {
-    let map = new google.maps.Map(document.getElementById("map"), {
-    center: pos,
-    zoom: 15
-    });
+// function initMap() {
+//     let map = new google.maps.Map(document.getElementById("map"), {
+//     center: pos,
+//     zoom: 15
+//     });
 
-let marker = new google.maps.marker({
-    map: map,
-    position: pos,
-    title: "Городская среда"
-})
+// let marker = new google.maps.marker({
+//     map: map,
+//     position: pos,
+//     title: "Городская среда"
+// })
+// }
+
+// 12. Modal window
+//funcModalWindow()
+function funcModalWindow() {
+    let imgElement = document.getElementById("modalImage") 
+    let modalElement = document.getElementById("myModalSpace")
+    let captionElement = document.getElementById("caption")
+    let modalImgElement = document.getElementById("modalImageFull")
+
+    imgElement.addEventListener('click', () => {
+        modalElement.style.display = "block"
+        captionElement.innerHTML = imgElement.alt     
+        modalImgElement.src = imgElement.src  
+    })
+
+    let closeElement = document.getElementsByClassName("closeModalWindow")[0]
+    closeElement.addEventListener('click', ()=>{
+        modalElement.style.display = "none"
+    })
 }
