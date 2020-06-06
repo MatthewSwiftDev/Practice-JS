@@ -378,3 +378,37 @@ function funcModalWindow() {
         modalElement.style.display = "none"
     })
 }
+
+// 13. Progress bar
+funcProgressBar()
+
+function funcProgressBar() {
+    let barElement = document.getElementById("myBar");
+    let buttonElement = document.getElementsByClassName("progressPlus")[0]
+    let buttonElementFull = document.getElementsByClassName("progressFull")[0]
+    let labelElement = document.getElementById("label")
+    let currentProgress = 10
+
+    buttonElement.addEventListener('click', ()=>{
+        if(currentProgress >= 100)
+            currentProgress = 0
+
+        currentProgress += 10
+        barElement.style.width = currentProgress + "%"
+        labelElement.innerText = currentProgress + "%"
+    })
+
+    buttonElementFull.addEventListener("click", ()=>{    
+        let id = setInterval(frame, 100)
+        function frame() {   
+            if(currentProgress >= 99){
+                clearInterval(id)  
+                //currentProgress = 0   
+            }
+
+            currentProgress++
+            barElement.style.width = currentProgress + "%"
+            labelElement.innerText = currentProgress + "%"        
+        }
+    })
+}
