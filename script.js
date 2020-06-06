@@ -412,3 +412,14 @@ function funcProgressBar() {
         }
     })
 }
+
+// 14 Popup.
+funcPopup()
+
+function funcPopup() {
+    let popupTextElement = document.getElementById("myPopup")
+    let popupElement = document.getElementsByClassName("popup")[0]
+    popupElement.addEventListener("click", ()=>{
+        popupTextElement.classList.toggle('show');
+    })
+}
