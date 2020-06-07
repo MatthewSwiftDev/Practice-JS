@@ -459,3 +459,40 @@ padding: 15px;
 .popup .show {
 visibility: visible;
 }
+
+/* #15 Accordion */
+.accoridionShell {
+    margin: 30px;
+    padding: 9px;
+    background-color: mintcream;
+}
+
+.accoridionShell .accordionButton {
+    background-color: lavender;
+    color: rgb(29, 109, 214);
+    width: 100%;
+    font-size: x-large;
+    font-family: sans-serif;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 3px 0;
+}
+
+button.accordionButton:active, 
+button.accordionButton:hover {
+    background-color: rgb(196, 196, 223);
+    color: rgb(11, 98, 212);
+}
+
+div .accordionText {
+    color: rgb(0, 112, 182);
+    font-size: x-large;
+    padding: 10px;
+    background-color: seashell;
+    display: none;
+}
+
+div.accordionText.show {
+    display: block;
+}

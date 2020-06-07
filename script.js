@@ -413,7 +413,7 @@ function funcProgressBar() {
     })
 }
 
-// 14 Popup.
+// 14. Popup.
 funcPopup()
 
 function funcPopup() {
@@ -422,4 +422,19 @@ function funcPopup() {
     popupElement.addEventListener("click", ()=>{
         popupTextElement.classList.toggle('show');
     })
+}
+
+// 15. Accordion.
+funcAccordion()
+
+function funcAccordion() {
+    let accordionButtonElements = document.getElementsByClassName("accordionButton");
+    for(let i = 0;i<accordionButtonElements.length; i++) {
+        accordionButtonElements[i].addEventListener("click", ()=>{
+            accordionButtonElements[i].classList.toggle("active")
+            accordionButtonElements[i].nextElementSibling.classList.toggle("show")
+            
+        })
+    }
+
 }
