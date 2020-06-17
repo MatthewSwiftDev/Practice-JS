@@ -496,3 +496,8 @@ div .accordionText {
 div.accordionText.show {
     display: block;
 }
+
+/* #16 Converter */
+.containerConverter {
+    margin: 30px;
+}

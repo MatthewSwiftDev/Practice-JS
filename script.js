@@ -438,3 +438,18 @@ function funcAccordion() {
     }
 
 }
+
+// 16. Converter.
+funcConverter()
+
+function funcConverter() {
+    let inpDollar = document.getElementById("inputDollar")
+    let outRub = document.getElementById("outputRub")
+    inpDollar.addEventListener("change", ()=>{
+        //console.log(inputDollar.value)
+        outRub.innerText = inputDollar.value*70
+    })
+    inpDollar.addEventListener('keyup', ()=>{       
+        outRub.innerText = inputDollar.value*70
+    })
+}
